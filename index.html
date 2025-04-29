@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grandiose Tutorials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <h1> GRANDIOSE   </h1>
+        <h2>TUTORIALS</h2>
+    </div>
+
+    <div class="activate">
+        <input class="actinput" id="input" type="text" placeholder="Enter your activation key">
+        <button id="activateButton">CONFIRM</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+    const correctKey = "John";  //  Store the key directly in JavaScript (INSECURE!)
+    const activateButton = document.getElementById("activateButton");
+
+    activateButton.addEventListener('click', function() {
+        const keyInput = document.getElementById("input");
+        const enteredKey = keyInput.value;
+        const messageDisplay = document.getElementById("message");
+
+        if (enteredKey === correctKey) {
+            //  Redirect to dashboard.html
+            window.location.href = 'dashboard.html';
+        } else {
+            messageDisplay.textContent = "Invalid activation key. Please try again.";
+            messageDisplay.style.color = "white";
+            keyInput.value = "";
+        }
+    });
+    </script>
+
+</body>
+</html>
