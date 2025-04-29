@@ -1,53 +1,135 @@
-body{
+/* style.css */
+
+body {
     margin: 0;
     width: 100%;
-height: auto;
-background-color: blue;
-}
-h1{
-    font-size: 50px;
-    text-align: center;
-    color: white;
+    height: auto;
+    background-color: blue;
+    text-align: center; /* Center content by default for smaller screens */
 }
 
-h2{
-    font-size: 30px;
+h1 {
+    font-size: 40px; /* Slightly smaller on mobile */
     text-align: center;
     color: white;
+    margin-top: 20px; /* Adjust top margin for smaller screens */
 }
 
-.logo{
-    margin-top: 100px;
-    width: 300px;
-    margin-left: 100px;
-    margin-top: 200px;
+h2 {
+    font-size: 24px; /* Slightly smaller on mobile */
+    text-align: center;
+    color: white;
+    margin-bottom: 30px; /* Add some bottom margin */
 }
-.activate{
-    float: right;
+
+.logo {
+    margin-top: 50px; /* Adjust top margin */
+    width: 80%; /* Make logo container responsive */
+    max-width: 300px; /* Limit maximum width */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px; /* Add some bottom margin */
+}
+
+.activate {
     display: flex;
-    margin-right: 300px;
+    flex-direction: column; /* Stack input and button on smaller screens */
+    align-items: center; /* Center items in the flex container */
+    margin-right: auto; /* Remove fixed right margin */
+    margin-left: auto; /* Center the activate container */
+    width: 80%; /* Make the container responsive */
+    max-width: 400px; /* Limit maximum width */
 }
-.actinput{
-    
+
+.actinput {
+    width: 100%; /* Make input responsive */
     height: 40px;
-    border-radius: 15px ;
+    border-radius: 15px;
+    margin-bottom: 10px; /* Add margin between input and button */
+    padding: 0 15px; /* Add some padding inside the input */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
-.actinput:focus{
+
+.actinput:focus {
     outline: none;
 }
-.actinput:hover{
+
+.actinput:hover {
     border: 3px solid white;
 }
-button{
-height: 40px;
-border-radius: 5px;
-margin-top: 4px;
-color: blue;
-border: 1px solid red;
+
+button {
+    height: 40px;
+    border-radius: 5px;
+    margin-top: 4px;
+    color: blue;
+    border: 1px solid red;
+    width: 100%; /* Make button responsive */
+    padding: 8px 20px;
+    box-sizing: border-box;
+    font-size: 16px; /* Adjust font size */
 }
-button:hover{
+
+button:hover {
     background-color: blue;
     color: white;
-    font-size: bolder;
+    font-weight: bolder;
     border: 2px solid black;
+    cursor: pointer; /* Add a pointer cursor on hover */
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+/* Media query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    body {
+        text-align: left; /* Align text to the left on larger screens */
+    }
+
+    h1 {
+        font-size: 50px;
+        text-align: left;
+        margin-top: 100px;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .logo {
+        width: 300px;
+        margin-left: 100px;
+        margin-top: 200px;
+        margin-bottom: 0; /* Reset bottom margin */
+    }
+
+    .activate {
+        float: right;
+        flex-direction: row; /* Display input and button in a row */
+        align-items: center; /* Vertically align items in the row */
+        margin-right: 300px;
+        margin-left: 0; /* Reset left margin */
+        width: auto; /* Adjust width */
+        max-width: none; /* Remove max width */
+    }
+
+    .actinput {
+        width: auto; /* Adjust width */
+        margin-right: 10px; /* Add margin between input and button */
+        margin-bottom: 0; /* Reset bottom margin */
+    }
+
+    button {
+        width: auto; /* Adjust width */
+        margin-top: 0; /* Reset top margin */
+    }
+
+    #message {
+        margin-top: 10px;
+        margin-left: 10px;
+    }
 }
